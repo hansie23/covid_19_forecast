@@ -1,0 +1,11 @@
+streamlit
+joblib
+xgboost
+numpy
+plotly==5.22.0
+pillow
+matplotlib
+pandas
+plotly
+streamlit-lottie
+humanize
