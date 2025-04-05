@@ -9,7 +9,7 @@ def main(home):
         st.image("assets/img/banner.png", use_column_width=True)
         st.write("""
             <center>
-                <h1>Welcome to the COVID-19 Case Prediction App! 🧑‍⚕️🧪</h1> 
+                <h1>Welcome to the COVID-19 Case Prediction App! 🧑‍⚕️</h1> 
             </center>
         """, unsafe_allow_html=True)
         
@@ -33,7 +33,7 @@ def main(home):
     - :handshake: **Foster collaboration and partnerships** between local stakeholders to collectively address the challenges posed by the pandemic.
 
     ### How to Use This App
-    1. :point_right: Navigate to the [**Model**](#model) page.
+    1. :point_right: Navigate to the [**Model**] page.
     2. :writing_hand: Enter the required input features.
     3. :chart_with_upwards_trend: Get the predicted total imputed cases.
 
@@ -44,7 +44,4 @@ def main(home):
     - [Zambia Ministry of Health](https://www.moh.gov.zm/) :flag-zm:
     - [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19) :bar_chart:
     - [Our World in Data: COVID-19 Data](https://ourworldindata.org/coronavirus) :globe_with_meridians:
-
-    ### Contact Us
-    For more information, please reach out to our team at [info@covidpredictapp.com](mailto:info@covidpredictapp.com) :email:
     """, unsafe_allow_html=True)
