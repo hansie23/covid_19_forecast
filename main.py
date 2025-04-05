@@ -19,7 +19,7 @@ div[data-testid="stMetric"]
          
 """, unsafe_allow_html=True)
 
-home, overview, eda, model, team = st.tabs(['Home', 'Overview', 'EDA', 'Model'])
+home, overview, eda, model = st.tabs(['Home', 'Overview', 'EDA', 'Model'])
 
 home_page(home)
 overview_page(overview)
