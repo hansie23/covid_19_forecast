@@ -1,26 +1,39 @@
+# name: Keep Streamlit App Awake
+# on:
+#   schedule:
+#     - cron: '*/30 * * * *' # Runs every 30 minutes
+#   workflow_dispatch: # Allows manual triggering
+# jobs:
+#   ping:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Ping Streamlit App
+#         run: |
+#           URL="https://covid-19-forecast.streamlit.app/"
+#           USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+          
+#           for i in {1..5}; do
+#             echo "Attempt $i: Pinging $URL"
+#             # We removed -L to avoid redirect loops. Just hitting the endpoint is enough to wake it.
+#             if curl -s -f -A "$USER_AGENT" "$URL" > /dev/null; then
+#               echo "Successfully pinged the app!"
+#               exit 0
+#             fi
+#             echo "Ping failed, retrying in 15 seconds..."
+#             sleep 15
+#           done
+#           echo "All attempts failed."
+#           exit 1
+
+
 name: Keep Streamlit App Awake
 on:
   schedule:
-    - cron: '*/30 * * * *' # Runs every 30 minutes
-  workflow_dispatch: # Allows manual triggering
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Streamlit App
-        run: |
-          URL="https://covid-19-forecast.streamlit.app/"
-          USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-          
-          for i in {1..5}; do
-            echo "Attempt $i: Pinging $URL"
-            # We removed -L to avoid redirect loops. Just hitting the endpoint is enough to wake it.
-            if curl -s -f -A "$USER_AGENT" "$URL" > /dev/null; then
-              echo "Successfully pinged the app!"
-              exit 0
-            fi
-            echo "Ping failed, retrying in 15 seconds..."
-            sleep 15
-          done
-          echo "All attempts failed."
-          exit 1
+        run: curl -v https://dynamic--pricing--engine.streamlit.app/
