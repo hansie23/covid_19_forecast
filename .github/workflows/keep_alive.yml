@@ -36,4 +36,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Streamlit App
-        run: curl -v https://dynamic--pricing--engine.streamlit.app/
+        run: curl -v https://covid-19-forecast.streamlit.app/
